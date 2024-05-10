@@ -4,10 +4,9 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all 
-		render json: @users 
+		render json: @users
 	end
 	def create
-		byebug
 		@user = User.create!(user_params)
 		render json: @user
 	end
@@ -39,22 +38,12 @@ class UsersController < ApplicationController
 	def set_user
 		if @user = User.find_by_id(params[:id])	
 		else
-			byebug
-			 render json: {messages: " Id Not present "}
+			render json: {messages: " Id Not present "}
     end
 	end
 
 	def user_params
 		params.require(:user).permit(:name, :age, :address, images: [])
 	end
-
-	# def attach_images_to_user
-	# 	images = params[:user][:images]
-	# 	return unless images
-
-	# 	images.each do |image|
-	# 		@user.images.attach(image)
-	# 	end
-	# end
 
 end
