@@ -69,3 +69,7 @@ gem 'rack-cors'
 gem "byebug"
 gem 'activestorage'
 gem 'active_model_serializers', '~> 0.10.13'
+
+gem 'activeadmin'
+gem 'sass-rails'
+gem 'devise'
